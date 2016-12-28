@@ -1,0 +1,35 @@
+/*create table ticketing.users(
+id integer not null primary key generated always as identity (start with 1, increment by 1),
+first_name varchar(255) not null default '',
+last_name varchar(255) not null default '',
+username varchar(255) not null unique,
+password varchar(255) not null unique,
+token varchar(255) default '',
+expires_at timestamp default null,
+role_id int not null,
+location_id int not null,
+company_id int not null,
+email varchar(255) not null unique,
+phone_number varchar(255) default 'N/A',
+mobile_number varchar(255) default 'N/A'
+
+); */
+
+/*create table ticketing.ticket(
+id integer not null primary key generated always as identity (start with 1, increment by 1),
+title varchar(255) default '',
+description varchar(255) default 'N/A',
+reported_by varchar (255) not null,
+assigned_to varchar(255) not null,
+status varchar(255) default 'Open',
+priority varchar(255) default 'Low',
+category varchar(255) default 'N/A',
+location_id int not null
+);*/
+
+create table ticketing.messages (
+id integer not null primary key generated always as identity (start with 1, increment by 1),
+ticket_id int not null,
+posted_by varchar(255) not null,
+message varchar(255) default ''
+);
